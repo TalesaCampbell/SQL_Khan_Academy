@@ -1,1 +1,1 @@
-# SQL_Khan_Academy
+# SQL_Projects
