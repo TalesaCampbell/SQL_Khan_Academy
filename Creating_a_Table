@@ -15,6 +15,9 @@ Yogurt ($2.00, 6, 108)
 Bagels ($5.00, 7, 71)
 Bread ($2.00, 7, 34)
 **/
+
+# Named the table and listed its contents and their values. First the item name, then the price, aisle, and the number of times it was purchased. 
+
 CREATE TABLE One_Stop_Shop(id INTEGER PRIMARY KEY, name TEXT, price INTEGER, aisle INTEGER, times_purchased INTEGER);
 INSERT INTO One_Stop_Shop VALUES(1, "Bananas", "$3.00", 4, 34);
 INSERT INTO One_Stop_Shop VALUES(2, "Chicken", "$9.00", 10, 56);
@@ -31,4 +34,9 @@ INSERT INTO One_Stop_Shop VALUES(12, "Strawberry", "$4.00", 4, 61);
 INSERT INTO One_Stop_Shop VALUES(13, "Yogurt", "$2.00", 6, 108);
 INSERT INTO One_Stop_Shop VALUES(14, "Bagels", "$5.00", 7, 71);
 INSERT INTO One_Stop_Shop VALUES(15, "Bread", "$2.00", 7, 34);
+
+# Entered all of the values into the table named "One_Stop_Shop" in order to form columns and rows. 
+
 Select name, price FROM One_Stop_Shop ORDER BY price;
+
+# Slected the names and prices from the table in order to oder the items by price.
