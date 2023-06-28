@@ -1,0 +1,49 @@
+/** Top_15_NBA_Players_of_2022_2023
+Nikola_Jokic(Denver_Nuggets, C, 24.7, 4)
+Giannis Antetokounmpo(Milwaukee_Bucks, PF, 31.8, 1)
+Luka_Doncic(Dallas_Mavericks, PG, 33.3, 5)
+Jayson_Tatum(Boston_Celtics, PF, 30.6, 9)
+Joel_Embiid(Philadelphia_76ers, C, 33.1, 6)
+Kevin_Durant(Phoenix_Suns PF, 29.7, 3)
+Stephen_Curry(Golden_State_Warriors, PG, 29.4, 2)
+Shai_Gilgeous-Alexander(Oklahoma_City_Thunder, SG, 30.8, 36)
+Damian_Lillard(Portland_Trailblazers, PG, 31.4, 13)
+Ja_Morant(Memphis_Grizzlies, PG, 27.3, 12)
+LeBron_James(Los_Angeles_Lakers, SF, 30.0, 7)
+Donovan_Mitchell(Cleveland_Cavaliers, SG, 27.3, 22)
+Jaylen_Brown(Boston_Celtics, SF, 26.5, 19)
+Domantas_Sabonis(Sacremento_Kings, C, 18.8, 50)
+Kawhi_Leonard(Los_Angeles_Clippers, SF, 22.1, 8)
+**/
+CREATE TABLE Top_15_NBA_Players_of_2022_2023(Ranking INTEGER PRIMARY KEY, Name TEXT, Team TEXT, Position TEXT, Points_Per_Game INTEGER, Preseaon_Rank INTEGER);
+INSERT INTO 'Top_15_NBA_Players_of_2022_2023' VALUES(1, 'Nikola Jokic', 'Denver Nuggets', 'C', 24.7, 4);
+INSERT INTO 'Top_15_NBA_Players_of_2022_2023' VALUES (2, 'Giannis Antetokounmpo','Milwaukee Bucks', 'PF', 31.8, 1);
+INSERT INTO 'Top_15_NBA_Players_of_2022_2023' VALUES(3, 'Luka Doncic', 'Dallas Mavericks', 'PG', 33.3, 5);
+INSERT INTO 'Top_15_NBA_Players_of_2022_2023' VALUES(4, 'Jayson Tatum', 'Boston Celtics', 'PF', 30.6, 9);
+INSERT INTO 'Top_15_NBA_Players_of_2022_2023' VALUES(5, 'Joel Embiid', 'Philadelphia 76ers', 'C', 33.1, 6);
+INSERT INTO 'Top_15_NBA_Players_of_2022_2023' VALUES(6, 'Kevin Durant', 'Phoenix Suns', 'PF', 29.7, 3);
+INSERT INTO 'Top_15_NBA_Players_of_2022_2023' VALUES(7, 'Stephen Curry', 'Golden State Warriors', 'PG', 29.4, 2);
+INSERT INTO 'Top_15_NBA_Players_of_2022_2023' VALUES(8, 'Shai-Gilgeous Alexander', 'Oklahoma City Thunder', 'SG', 30.8, 36);
+INSERT INTO 'Top_15_NBA_Players_of_2022_2023' VALUES(9, 'Damian Lillard', 'Portland Trailblazers', 'PG', 31.4, 13);
+INSERT INTO 'Top_15_NBA_Players_of_2022_2023' VALUES(10, 'Ja Morant', 'Memphis Grizzles', 'PG', 27.3, 12);
+INSERT INTO 'Top_15_NBA_Players_of_2022_2023' VALUES(11, 'LeBron James', 'Los Angeles Lakers', 'SF', 30.0, 7);
+INSERT INTO 'Top_15_NBA_Players_of_2022_2023' VALUES(12, 'Donovan Mitchell', 'Cleveland Caveliers', 'SG', 27.3, 22);
+INSERT INTO 'Top_15_NBA_Players_of_2022_2023' VALUES(13, 'Jaylen Brown', 'Boston Celtics', 'SF', 26.5, 19);
+INSERT INTO 'Top_15_NBA_Players_of_2022_2023' VALUES(14, 'Domantas Sabonis', 'Sacremento Kings', 'C', 18.8, 50);
+INSERT INTO 'Top_15_NBA_Players_of_2022_2023' VALUES(15, 'Kawhi Leonard', 'Los Angleles Clippers', 'SF', 22.1, 8);
+
+#Created a table that includes the top 15 players of the 2022-2023 NBA Season. The table includes the name ranking at the end of the season, team, postion, points per game. and preseason ranking. 
+
+SELECT * FROM Top_15_NBA_Players_of_2022_2023;
+
+#Displayed the table
+
+SELECT COUNT(*),
+    CASE
+        WHEN 'Ranking' > 'Preseason_Rank' THEN 'Over_Perfomed'
+        WHEN 'Ranking' < 'Preseason_Rank' THEN 'Under_Performed'
+        ELSE 'As_Predicted'
+        END AS 'Season_Overview'
+FROM Top_15_NBA_Players_of_2022_2023;
+
+#Used the case function to determine which players had out performed their preseason ranking's for the 2022=2024 season.
