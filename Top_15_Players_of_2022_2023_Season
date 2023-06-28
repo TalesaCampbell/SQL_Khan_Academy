@@ -22,15 +22,15 @@ INSERT INTO 'Top_15_NBA_Players_of_2022_2023' VALUES(3, 'Luka Doncic', 'Dallas M
 INSERT INTO 'Top_15_NBA_Players_of_2022_2023' VALUES(4, 'Jayson Tatum', 'Boston Celtics', 'PF', 30.6, 9);
 INSERT INTO 'Top_15_NBA_Players_of_2022_2023' VALUES(5, 'Joel Embiid', 'Philadelphia 76ers', 'C', 33.1, 6);
 INSERT INTO 'Top_15_NBA_Players_of_2022_2023' VALUES(6, 'Kevin Durant', 'Phoenix Suns', 'PF', 29.7, 3);
-INSERT INTO 'Top_15_NBA_Players_of_2022_2023' VALUES(7, 'Stephen Curry', 'Golden State Warriors', 'PG', 29.4, 2);
-INSERT INTO 'Top_15_NBA_Players_of_2022_2023' VALUES(8, 'Shai-Gilgeous Alexander', 'Oklahoma City Thunder', 'SG', 30.8, 36);
+INSERT INTO 'Top_15_NBA_Players_of_2022_2023' VALUES(7, 'Stephen Curry', 'Golden State Warriors, 'PG', 29.4, 2);
+INSERT INTO 'Top_15_NBA_Players_of_2022_2023' VALUES(8, 'Shai-Gilgeous Alexander', 'Oklahoma City Thunder, 'SG', 30.8, 36);
 INSERT INTO 'Top_15_NBA_Players_of_2022_2023' VALUES(9, 'Damian Lillard', 'Portland Trailblazers', 'PG', 31.4, 13);
 INSERT INTO 'Top_15_NBA_Players_of_2022_2023' VALUES(10, 'Ja Morant', 'Memphis Grizzles', 'PG', 27.3, 12);
 INSERT INTO 'Top_15_NBA_Players_of_2022_2023' VALUES(11, 'LeBron James', 'Los Angeles Lakers', 'SF', 30.0, 7);
 INSERT INTO 'Top_15_NBA_Players_of_2022_2023' VALUES(12, 'Donovan Mitchell', 'Cleveland Caveliers', 'SG', 27.3, 22);
 INSERT INTO 'Top_15_NBA_Players_of_2022_2023' VALUES(13, 'Jaylen Brown', 'Boston Celtics', 'SF', 26.5, 19);
-INSERT INTO 'Top_15_NBA_Players_of_2022_2023' VALUES(14, 'Domantas Sabonis', 'Sacremento Kings', 'C', 18.8, 50);
-INSERT INTO 'Top_15_NBA_Players_of_2022_2023' VALUES(15, 'Kawhi Leonard', 'Los Angleles Clippers', 'SF', 22.1, 8);
+INSERT INTO 'Top_15_NBA_Players_of_2022_2023' VALUES(14, 'Domantas Sabonis', 'Sacramento Kings', 'C', 18.8, 50);
+INSERT INTO 'Top_15_NBA_Players_of_2022_2023' VALUES(15, 'Kawhi Leonard', 'Los Angeles Clippers', 'SF', 22.1, 8);
 
 #Created a table that includes the top 15 players of the 2022-2023 NBA Season. The table includes the name ranking at the end of the season, team, postion, points per game. and preseason ranking. 
 
@@ -46,4 +46,12 @@ SELECT COUNT(*),
         END AS 'Season_Overview'
 FROM Top_15_NBA_Players_of_2022_2023;
 
-#Used the case function to determine which players had out performed their preseason ranking's for the 2022=2024 season.
+#Used the case function to determine which players had outperformed their preseason rankings for the 2022=2024 season.
+
+SELECT Name FROM Top_15_NBA_Players_of_2022_2023 WHERE position = 'C' AND Points_Per_Game > 25;
+
+#Determined how many players in the top 15 are centers averaging more than 25 points a game. 
+
+SELECT name, MAX(Points_Per_Game) FROM Top_15_NBA_Players_of_2022_2023;
+
+#Determine which player averaged the most points per game
