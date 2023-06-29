@@ -46,7 +46,7 @@ SELECT COUNT(*),
         END AS 'Season_Overview'
 FROM Top_15_NBA_Players_of_2022_2023;
 
-#Used the case function to determine which players had outperformed their preseason rankings for the 2022=2024 season.
+#Used the case function to determine which players had outperformed their preseason rankings for the 2022-2023 season.
 
 SELECT Name FROM Top_15_NBA_Players_of_2022_2023 WHERE position = 'C' AND Points_Per_Game > 25;
 
