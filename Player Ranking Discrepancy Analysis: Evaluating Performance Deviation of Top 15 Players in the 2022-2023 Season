@@ -34,9 +34,7 @@ INSERT INTO 'Top_15_NBA_Players_of_2022_2023' VALUES(15, 'Kawhi Leonard', 'Los A
 
 #Created a table that includes the top 15 players of the 2022-2023 NBA Season. The table includes the name ranking at the end of the season, team, postion, points per game. and preseason ranking. 
 
-SELECT * FROM Top_15_NBA_Players_of_2022_2023;
-
-#Displayed the table
+SELECT * FROM Top_15_NBA_Players_of_2022_2023; -- Displayed the table
 
 SELECT COUNT(*),
     CASE
@@ -44,14 +42,10 @@ SELECT COUNT(*),
         WHEN 'Ranking' < 'Preseason_Rank' THEN 'Under_Performed'
         ELSE 'As_Predicted'
         END AS 'Season_Overview'
-FROM Top_15_NBA_Players_of_2022_2023;
+FROM Top_15_NBA_Players_of_2022_2023; -- Used the case function to determine which players had outperformed their preseason rankings for the 2022-2023 season.
 
-#Used the case function to determine which players had outperformed their preseason rankings for the 2022-2023 season.
 
-SELECT Name FROM Top_15_NBA_Players_of_2022_2023 WHERE position = 'C' AND Points_Per_Game > 25;
+SELECT Name FROM Top_15_NBA_Players_of_2022_2023 WHERE position = 'C' AND Points_Per_Game > 25; -- Determined how many players in the top 15 are centers averaging more than 25 points a game. 
 
-#Determined how many players in the top 15 are centers averaging more than 25 points a game. 
 
-SELECT name, MAX(Points_Per_Game) FROM Top_15_NBA_Players_of_2022_2023;
-
-#Determine which player averaged the most points per game
+SELECT name, MAX(Points_Per_Game) FROM Top_15_NBA_Players_of_2022_2023; -- Determine which player averaged the most points per game
