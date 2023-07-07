@@ -8,7 +8,7 @@ Speaker(Electronics, 84.39, 825)
 Dryer(Appliance, 285.14, 909)
 Washer(Appliance, 321.49, 621)
 Deep Freezer(Appliance,	279.99,407)
-Refrigerater(Appliance,	852.56, 860)
+Refrigerator(Appliance,	852.56, 860)
 Coffee Maker(Appliance,	69.04, 171
 Deep Fryer(Appliance, 74.46, 402)
 Air Fryer(Appliance, 95.33, 910)
@@ -30,10 +30,10 @@ Tablet(Electronics,	200.21,99)
 Laptop Case	(Accessories,22.67,103)
 */
 
-CREATE TABLE Products(Product_ID INTEGER PRIMARY KEY, Product_Name TEXT, Category TEXT, Price INTEGER, Supplier_ID INTEGER); - - Created a table for products
+CREATE TABLE Products(Product_ID INTEGER PRIMARY KEY, Product_Name TEXT, Category TEXT, Price INTEGER, Supplier_ID INTEGER); -- Created a table for products
 
 
-INSERT INTO Products VALUES (1,"Smart Watch Charger", "Electronics", "$9.75", 102);
+INSERT INTO Products VALUES (1, "Smart Watch Charger", "Electronics", "$9.75", 102);
 INSERT INTO Products VALUES (2, "Desktop Computer", "Electronics", "$1209.50", 255);
 INSERT INTO Products VALUES (3, "Recliner", "Furniture", "$252.37", 90);
 INSERT INTO Products VALUES (4, "Bean Bag", "Furniture", "$72.12", 678);
@@ -43,17 +43,17 @@ INSERT INTO Products VALUES (7, "Speaker", "Electronics", "$84.39", 825);
 INSERT INTO Products VALUES (8, "Dryer", "Appliance", "$285.14", 909);
 INSERT INTO Products VALUES (9, "Washer", "Appliance", "$321.49", 621);
 INSERT INTO Products VALUES (10, "Deep Freezer", "Appliance", "$279.99", 407);
-INSERT INTO Products VALUES (11, "Refrigerater", "Appliance", "$852.56", 860);
+INSERT INTO Products VALUES (11, "Refrigerator", "Appliance", "$852.56", 860);
 INSERT INTO Products VALUES (12, "Coffee Maker", "Appliance", "$69.04", 171);
 INSERT INTO Products VALUES (13, "Deep Fryer", "Appliance", "$74.46", 402);
 INSERT INTO Products VALUES (14, "Air Fryer", "Appliance","$95.33", 910);
-INSERT INTO Products VALUES (15, "Couch", "Furniture", "$141.09" ,376);
-INSERT INTO Products VALUES (16, "Console Controller", "Electronics", "$45.98" ,411);
-INSERT INTO Products VALUES (17, "Video Game Console", "Electronics", "$423.79" ,922);
-INSERT INTO Products VALUES (18, "Tablet Case", "Accessories", "$11.43" ,54);
-INSERT INTO Products VALUES (19, "Laptop Charger", "Electronics", "$12.79" ,78);
+INSERT INTO Products VALUES (15, "Couch", "Furniture", "$141.09",376);
+INSERT INTO Products VALUES (16, "Console Controller", "Electronics", "$45.98",411);
+INSERT INTO Products VALUES (17, "Video Game Console", "Electronics", "$423.79",922);
+INSERT INTO Products VALUES (18, "Tablet Case", "Accessories", "$11.43",54);
+INSERT INTO Products VALUES (19, "Laptop Charger", "Electronics", "$12.79",78);
 INSERT INTO Products VALUES (20, "Camera", "Electronics", "$146.91", 32);
-INSERT INTO Products VALUES (21, "Phone Charger", "Electronics", "$5.83" ,994);
+INSERT INTO Products VALUES (21, "Phone Charger", "Electronics", "$5.83",994);
 INSERT INTO Products VALUES (22, "Massage Gun", "Electronics", "$60.41", 623);
 INSERT INTO Products VALUES (23, "Television", "Electronics", "$409.00", 447); 
 INSERT INTO Products VALUES (24, "Bluetooth Headphones", "Electronics", "$150.38", 231);
@@ -65,7 +65,7 @@ INSERT INTO Products VALUES (29, "Tablet", "Electronics", "$200.21", 99);
 INSERT INTO Products VALUES (30, "Laptop Case", "Accessories", "$22.67", 103);
 
 
-SELECT * FROM Products; - - Displayed the prodcuts table
+SELECT * FROM Products; -- Displayed the products table
 
 
 /* Bobby(White, bobbywhite@lionmail.com, (965)332-0934)
@@ -86,7 +86,7 @@ Kim(Claws, Kim.Claws394@snailmail.com, (367)732-8237)
 */
 
 
-CREATE TABLE Customers(Customer_ID INTEGER PRIMARY KEY, First_Name TEXT, Last_Name TEXT, Email TEXT, Phone_Number INTEGER); - - Created a table for customers
+CREATE TABLE Customers(Customer_ID INTEGER PRIMARY KEY, First_Name TEXT, Last_Name TEXT, Email TEXT, Phone_Number INTEGER); -- Created a table for customers
 
 
 INSERT INTO Customers VALUES(1, "Bobby", "White", "bobbywhite@lionmail.com", "(965)332-0934");
@@ -106,7 +106,7 @@ INSERT INTO Customers VALUES(14, "Bryan", "West", "West_K@lionmail.com", "(102)4
 INSERT INTO Customers VALUES(15, "Kim", "Claws", "Kim.Claws394@snailmail.com", "(367)732-8237"); 
 
 
-SELECT * FROM Customers; - - Displayed the customers table
+SELECT * FROM Customers; -- Displayed the customers table
 
 
 /* 1(1, 6/2/23, 2, $19.50)
@@ -132,7 +132,7 @@ SELECT * FROM Customers; - - Displayed the customers table
 */
 
 
-CREATE TABLE Sales(Sale_ID INTEGER PRIMARY KEY, Product_ID INTEGER, Customer_ID INTEGER , Sale_Date INTEGER, Quantity INTEGER, Total_Price INTEGER); - - Created a table for sales in June of 2023
+CREATE TABLE Sales(Sale_ID INTEGER PRIMARY KEY, Product_ID INTEGER, Customer_ID INTEGER , Sale_Date INTEGER, Quantity INTEGER, Total_Price INTEGER); -- Created a table for sales in June of 2023
 
 
 INSERT INTO Sales VALUES(1, 1, 1, "6/2/23", 2, "19.50");
@@ -159,7 +159,7 @@ INSERT INTO Sales VALUES(19, 12, 14,  "6/27/23 ", 1,  "69.04"
 INSERT INTO Sales VALUES(20, 9, 15, "6/28/23", 1, "321.49");
 
 
-SELECT * FROM Sales; - - Displayed the sales table
+SELECT * FROM Sales; -- Displayed the sales table
 
 
 SELECT c.First_Name, c.Last_Name, SUM(s.Total_Price) AS Total_Spent
@@ -167,7 +167,7 @@ FROM Customers c
 JOIN Sales s ON c.Customer_ID = s.Customer_ID
 GROUP BY c.First_Name, c.Last_Name
 ORDER BY Total_Spent DESC
-LIMIT 1; - - Diplayed the customer who spent the total amount of money
+LIMIT 1; -- Diplayed the customer who spent the total amount of money
 
 
 SELECT c.First_Name, c.Last_Name, COUNT(*) AS Total_Items_Bought
@@ -175,7 +175,7 @@ FROM Customers c
 JOIN Sales s ON c.Customer_ID = s.Customer_ID
 GROUP BY c.First_Name, c.Last_Name
 ORDER BY Total_Items_Bought DESC
-LIMIT 3; - - Diplayed the top 3 customers who made the most purchases 
+LIMIT 3; -- Diplayed the top 3 customers who made the most purchases 
 
 
 SELECT Product_Name, Quantity 
@@ -184,4 +184,4 @@ JOIN Sales
 ON Products.Product_ID = Sales.Product_ID
 GROUP BY Product_Name
 ORDER BY Quantity DESC
-LIMIT 3; - - Displayed the products that were sold the most 
+LIMIT 3; -- Displayed the products that were sold the most 
